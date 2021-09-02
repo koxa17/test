@@ -1,13 +1,7 @@
 <template>
   <div class="container">
     <h1 class="main-title">Посты на Vue Js</h1>
-    <div class="app__btns">
-      <my-button @click="showDialog">Создать пост</my-button>
-      <my-selected-list
-          :options="sortOptions"
-          v-model="selectedSort"
-      ></my-selected-list>
-    </div>
+
     <div class="app">
       <my-dialog v-model:show="dialogVisible">
         <post-form @create="addPost"></post-form>
@@ -18,6 +12,7 @@
           @remove="removePost"
       ></post-list>
       <h4 v-else>Идет загрузка.....</h4>
+      <h4>Новая загрузка</h4>
     </div>
   </div>
 </template>
@@ -35,7 +30,6 @@ export default {
     PostForm,
     PostList,
   },
-
   data() {
     return {
       posts: [
@@ -60,9 +54,6 @@ export default {
     },
     removePost: function (post) {
       this.posts = this.posts.filter((p) => p.id !== post.id);
-    },
-    showDialog: function () {
-      this.dialogVisible = true;
     },
     fetchPosts: async function () {
       try {
