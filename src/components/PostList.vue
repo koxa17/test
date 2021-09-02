@@ -9,6 +9,7 @@
     ></post-item>
   </div>
   <h2 class="title__empty" v-else>Список постов пуст</h2>
+  <h2 class="title__empty" >Полный</h2>
 </template>
 
 <script>
