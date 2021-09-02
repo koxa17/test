@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="main-title">Посты на Vue Js</h1>
-
+    <App_btns></App_btns>
     <div class="app">
       <my-dialog v-model:show="dialogVisible">
         <post-form @create="addPost"></post-form>
@@ -22,6 +22,7 @@ import Grids from "./components/UI/Grids";
 import PostForm from "@/components/PostForm";
 import PostList from "@/components/PostList";
 import axios from "axios";
+import App_btns from './App_btns'
 
 export default {
   name: "App",
@@ -29,6 +30,7 @@ export default {
     Grids,
     PostForm,
     PostList,
+    App_btns
   },
   data() {
     return {
